@@ -1,0 +1,23 @@
+[project]
+name = "stylescout-ai"
+version = "1.0.0"
+description = "AI-powered outfit-to-location photo spot recommender using MCP"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.1.2",
+    "httpx>=0.27.0"
+]
+
+[project.scripts]
+stylescout-ai = "stylescout_ai.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stylescout_ai"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
